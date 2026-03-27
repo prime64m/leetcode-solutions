@@ -1,0 +1,33 @@
+// Problem: Maximum Subarray
+// Link: https://leetcode.com/problems/maximum-subarray/
+// Difficulty: Medium
+
+// Approach:
+// - Use Kadane’s Algorithm
+// - At each index, decide:
+//   → Start new subarray OR extend previous one
+// - Keep track of maximum sum found so far
+
+// Time Complexity: O(n)
+// Space Complexity: O(1)
+
+
+class Solution {
+public:
+    int maxSubArray(vector<int>& nums) {
+
+        int n = nums.size();
+
+        int currSum = nums[0];
+        int maxSum = nums[0];
+
+        for(int i = 1; i < n; i++){
+
+            currSum = max(nums[i], currSum + nums[i]);
+
+            maxSum = max(maxSum, currSum);
+        }
+
+        return maxSum;
+    }
+};
