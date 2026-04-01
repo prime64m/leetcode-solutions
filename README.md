@@ -6,8 +6,8 @@ I solve problems daily to improve my Data Structures & Algorithms (DSA) skills.
 ---
 
 ## 📊 Progress Tracker
-- 🟢 Total Problems Solved: 1
-- 🟢 Easy: 1
+- 🟢 Total Problems Solved: 10
+- 🟢 Easy: 10
 - 🟡 Medium: 0
 - 🔴 Hard: 0
 
