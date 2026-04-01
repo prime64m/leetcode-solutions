@@ -1,0 +1,41 @@
+// Problem: Container With Most Water
+// Link: https://leetcode.com/problems/container-with-most-water/
+// Difficulty: Medium
+
+// Approach:
+// - Use two pointers (left and right)
+// - Calculate area = width * min(height[left], height[right])
+// - Update maximum water
+// - Move the pointer pointing to smaller height
+//   (because it limits the container height)
+// - Continue until left < right
+
+// Time Complexity: O(n)
+// Space Complexity: O(1)
+
+class Solution {
+public:
+    int maxArea(vector<int>& height) {
+
+        int left = 0;
+        int right = height.size() - 1;
+        int maxwater = 0;
+
+        while(left < right) {
+
+            int width = right - left;
+            int h = min(height[left], height[right]);
+            int area = width * h;
+
+            maxwater = max(maxwater, area);
+
+            if(height[left] < height[right]) {
+                left++;
+            } else {
+                right--;
+            }
+        }
+
+        return maxwater;
+    }
+};
